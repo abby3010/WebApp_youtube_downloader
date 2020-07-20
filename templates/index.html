@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="Download YouTube videos in phone memory and thus save the video to share it to anyone offline. The videos will be saved inside your file explorer or main file collection system of your device.">
+    <meta name="keywords" content="YouTube, YouTube Downloader, download, downloaded, Download, Downloader,python flask, flask, flask project, app, ads, how to make websites, how to download youtube videos, download youtube videos, phone memory, phone download youtube video, python, python projects, Python, Abhay Ubhale, Abhay, abhay, bootstrap, website, web development, ">
+    <meta name="author" content="Abhay Ubhale">
+    
+    <title>YouTube Downloader - download videos | ~Abby</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='floating-labels.css')}}" rel="stylesheet">
+</head>
+
+<body>
+    <form class="form-signin" method="POST" action="">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="{{ url_for('static' , filename='img/image.webp') }}" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Download the YouTube Video In your phone memory!</h1>
+            <p>Paste the URL of the YouTube video you want to Download in the box below!</p>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" class="form-control" placeholder="Enter link" required name="url" id="url">
+            <label for="inputPassword"> Enter Link</label>
+        </div>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Download</button>
+        <p style="text-align: center;">Some videos are restricted to download. <br>Such videos cannot be downloaded.
+            <strong> Sorry! </strong> </p>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+
+    </form>
+    {% if eval==1 %}
+    <script>
+        alert('Cannot Download the video !')
+    </script>
+    {%endif%}
+
+    {% if eval==0 %}
+    <script>
+        alert('Download Successful!');
+        document.getElementById('url').value = "";
+    </script>
+    {%endif%}
+</body>
+
+</html>
